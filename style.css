@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
 body {
     min-height: 100vh;
     display: flex;
@@ -44,12 +51,12 @@ button{
     color: white;
 }
 
-#noButton{
+#noButton {
     background: white;
     color: #e75480;
     position: relative;
+    transition: transform 0.25s ease;
 }
-
 button:hover{
     transform: scale(1.05);
 }
@@ -431,4 +438,12 @@ button:hover{
 
 #bear{
     border-radius: 30px;
+}
+
+@media (max-width: 600px) {
+
+    #noButton {
+        position: relative;
+    }
+
 }

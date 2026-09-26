@@ -16,17 +16,22 @@ yesButton.addEventListener("click", () => {
 });
 
 
-noButton.addEventListener("mouseover", () => {
+noButton.addEventListener("mouseenter", () => {
 
-    const maxX = window.innerWidth - noButton.offsetWidth;
-    const maxY = window.innerHeight - noButton.offsetHeight;
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
 
-    const randomX = Math.random() * maxX;
-    const randomY = Math.random() * maxY;
+    const buttonWidth = noButton.offsetWidth;
+    const buttonHeight = noButton.offsetHeight;
 
-    noButton.style.position = "fixed";
+    const margin = 30;
 
-    noButton.style.left = `${randomX}px`;
-    noButton.style.top = `${randomY}px`;
+    const maxX = (screenWidth - buttonWidth) / 2 - margin;
+    const maxY = (screenHeight - buttonHeight) / 2 - margin;
+
+    const randomX = (Math.random() * 2 - 1) * maxX;
+    const randomY = (Math.random() * 2 - 1) * maxY;
+
+    noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
 
 });
